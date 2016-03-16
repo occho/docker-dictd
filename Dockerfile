@@ -12,6 +12,8 @@ RUN curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/dow
   && rm /usr/local/bin/gosu.asc \
   && chmod +x /usr/local/bin/gosu
 
+COPY dict-dbs/ /dict-dbs
+
 RUN touch /dictd.log && chmod 777 /dictd.log
 COPY dict.conf /etc/dictd/
 COPY dictd.conf /etc/dictd/
